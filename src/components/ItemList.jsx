@@ -1,0 +1,38 @@
+
+//Item list card con toda la info
+
+import { Link } from 'react-router-dom';
+
+const ItemList = ({ product }) => {
+	return (
+		<>
+		<article className='itemList'>
+			<div className='ItemContainer'>
+				<div className='cardContainer'>
+					<div className='itemListImg'>
+						<img className='itemImg' src={product.img}/>
+					</div>
+					<div className='itemListSet'>
+						<div className='iltemListCategory'>
+							<p>{product.categoria}</p>
+						</div>
+						<div>
+							<h4>{product.nombre}</h4>
+						</div>
+						<div>
+							<h2>${product.precio}</h2>
+						</div>
+						<div className='btnSeeMore'>
+							<Link to={`/detail/${product.id}`}>
+								<button className='text-black btn'>Ver mas</button>
+							</Link>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+		</>
+	);
+};
+
+export default ItemList;
